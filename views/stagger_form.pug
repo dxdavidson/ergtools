@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='numRowers') Number of Rowers:
+      select#name.form-control(name='numRowers')
+        option(value="3") 3
+        option(value="4") 4
+        option(value="5") 5
+        option(value="6") 6        
+      label(for='numErgos') Number of Ergos:
+      select#name.form-control(name='numErgos')
+        option(value="2") 2
+        option(value="3") 3
+        option(value="4") 4
+        option(value="5") 5  
+      label(for='wktInterval') Workout Interval:
+      input#name.form-control(type='text', placeholder='mm:ss', name='wktInterval')      
+      label(for='recovery') Recovery :
+      input#name.form-control(type='text', placeholder='mm:ss', name='recovery')  
+    button.btn.btn-primary(type='submit') Submit
+    
+    p Set rest time = #{calcRest}
+    p Stagger start by = #{calcStagger}
+
+  if errors 
+   ul
+    for error in errors
+     li!= error.msg

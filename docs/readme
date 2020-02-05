@@ -1,0 +1,9 @@
+To run in development
+
+SET DEBUG=ergtools:* & npm run devstart
+
+
+To test PUG
+
+cd views
+pug -w ./ -o ./html -P
