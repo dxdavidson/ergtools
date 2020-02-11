@@ -1,9 +1,13 @@
 To run in development
 
-SET DEBUG=ergtools:* & npm run devstart
+    SET DEBUG=ergtools:* & npm run devstart
 
+To access from browser
+
+    http://localhost:3001/
 
 To test PUG
 
-cd views
-pug -w ./ -o ./html -P
+    cd views
+    pug -w ./ -o ./html -P
+
