@@ -4,27 +4,52 @@ block content
   h1 #{title}
 
   form(method='POST' action='')
-    div.form-group
-      label(for='numRowers') Number of Rowers:
-      select#name.form-control(name='numRowers')
-        option(value="3") 3
-        option(value="4") 4
-        option(value="5") 5
-        option(value="6") 6        
-      label(for='numErgos') Number of Ergos:
-      select#name.form-control(name='numErgos')
-        option(value="2") 2
-        option(value="3") 3
-        option(value="4") 4
-        option(value="5") 5  
-      label(for='wktInterval') Workout Interval:
-      input#name.form-control(type='text', placeholder='mm:ss', name='wktInterval')      
-      label(for='recovery') Recovery :
-      input#name.form-control(type='text', placeholder='mm:ss', name='recovery')  
+    div.form-group.row
+      label.col-sm-2.col-form-label(for='numRowers') Number of Rowers:
+      .form-check.form-check-inline
+        input#inlineRadio1.form-check-input(type='radio' name='numRowers' value='3')
+        label.form-check-label(for='inlineRadio1') 3
+      .form-check.form-check-inline
+        input#inlineRadio2.form-check-input(type='radio' name='numRowers' value='4')
+        label.form-check-label(for='inlineRadio2') 4
+      .form-check.form-check-inline
+        input#inlineRadio3.form-check-input(type='radio' name='numRowers' value='5')
+        label.form-check-label(for='inlineRadio3') 5
+      .form-check.form-check-inline
+        input#inlineRadio4.form-check-input(type='radio' name='numRowers' value='6')
+        label.form-check-label(for='inlineRadio4') 6        
+    div.form-group.row
+      label.col-sm-2.col-form-label(for='numErgos') Number of Ergos:
+      .form-check.form-check-inline
+        input#inlineRadioErgo1.form-check-input(type='radio' name='numErgos' value='2')
+        label.form-check-label(for='inlineRadioErgo1') 2
+      .form-check.form-check-inline
+        input#inlineRadioErgo2.form-check-input(type='radio' name='numErgos' value='3')
+        label.form-check-label(for='inlineRadioErgo2') 3
+      .form-check.form-check-inline
+        input#inlineRadioErgo3.form-check-input(type='radio' name='numErgos' value='4')
+        label.form-check-label(for='inlineRadioErgo3') 4
+      .form-check.form-check-inline
+        input#inlineRadioErgo4.form-check-input(type='radio' name='numErgos' value='5')
+        label.form-check-label(for='inlineRadioErgo4') 5        
+    div.form-group.row       
+      label.col-sm-2.col-form-label(for='wktInterval') Workout Interval :
+      .col-sm-2  
+        input#wktInterval.form-control(type='text', placeholder='mm:ss', name='wktInterval')
+    div.form-group.row       
+      label.col-sm-2.col-form-label(for='recovery') Recovery :
+      .col-sm-2  
+        input#recovery.form-control(type='text', placeholder='mm:ss', name='recovery')
     button.btn.btn-primary(type='submit') Submit
-    
-    p Set rest time = #{calcRest}
-    p Stagger start by = #{calcStagger}
+
+    p
+    .row
+      .col-sm-2 Set Rest Time :
+      .col-sm-2 #{calcRest}
+    p
+    .row
+      .col-sm-2 Stagger Starts :
+      .col-sm-2 #{calcStagger}
 
   if errors 
    ul

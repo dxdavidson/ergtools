@@ -21,6 +21,8 @@ exports.stagger_create_post = [
     validator.body('recovery', 'Recovery should be mm:ss').matches('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$'),
 
     (req, res, next) => {
+        console.debug("Values from form: req.body.numRowers=" + req.body.numRowers + " req.body.numErgos="+req.body.numErgos +" req.body.wktInterval="+req.body.wktInterval+" req.body.recovery="+req.body.recovery);
+        console.debug("numRowers2="+req.body.numRowers2);
         retval = StaggerUtils.calcRestStagger(req.body.numRowers, req.body.numErgos, req.body.wktInterval, req.body.recovery);
         console.debug("retval.programmedRest" + retval.programmedRest);
         console.debug("retval.stagger" + retval.stagger);
