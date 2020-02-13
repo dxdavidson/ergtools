@@ -4,10 +4,6 @@ html(lang='en')
     title= title
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-    //script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    //script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-    //link(rel='stylesheet', href='/stylesheets/style.css')
 
     // Bootstrap CSS
     link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
@@ -17,18 +13,30 @@ html(lang='en')
     script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6' crossorigin='anonymous')
 
-
   body
-    div(class='container-fluid')
-      div(class='row')
-        div(class='col-sm-2')
-          block sidebar
-            ul(class='sidebar-nav')
-              li 
-                a(href='/ergtools') Home
-              li 
-                a(href='/ergtools/stagger/create') Stagger
-              
-                
-        div(class='col-sm-10')
-          block content
+    ul.nav.nav-tabs
+      li.nav-item
+        a.nav-link(href='/ergtools') Home
+      li.nav-item
+        a.nav-link(href='/ergtools/stagger/create') Stagger
+    
+    div(class='col-sm-10')
+      block content
+
+//-
+  body
+    // Navbar content
+    nav.navbar.navbar-dark.bg-primary
+      a.navbar-brand(href='#') Ergo Tools
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNavAltMarkup.collapse.navbar-collapse
+        .navbar-nav
+          a.nav-item.nav-link.active(href='/ergtools')
+            | Home 
+            span.sr-only (current)
+          a.nav-item.nav-link(href='/ergtools/stagger/create') Stagger
+
+    div(class='col-sm-10')
+      block content
+

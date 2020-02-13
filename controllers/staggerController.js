@@ -30,7 +30,7 @@ exports.stagger_create_post = [
         const errors = validator.validationResult(req);
 
         if (!errors.isEmpty()) {
-            // There are errors. Render the form again wsth sanitized values/error messages.
+            // There are errors. Render the form again with sanitized values/error messages.
             res.render('stagger_form', { title: 'Calculate Stagger', errors: errors.array()});
             return;
           }
