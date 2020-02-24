@@ -33,13 +33,30 @@ block content
         input#inlineRadioErgo4.form-check-input(type='radio' name='numErgos' value='5')
         label.form-check-label(for='inlineRadioErgo4') 5        
     div.form-group.row       
-      label.col-sm-2.col-form-label(for='wktInterval') Workout Interval :
+      label.col-sm-2.col-form-label(for='interval') Workout Interval :
       .col-sm-2  
-        input#wktInterval.form-control(type='text', placeholder='mm:ss', name='wktInterval')
+        input#wktInterval(list='intervalChoices', placeholder='mm:ss' name='wktInterval')
+        datalist#intervalChoices
+          option(value='08:00')
+          option(value='07:00')
+          option(value='06:00')
+          option(value='05:00')          
+          option(value='04:00')          
+          option(value='03:00')          
+          option(value='02:00')                                        
     div.form-group.row       
       label.col-sm-2.col-form-label(for='recovery') Recovery :
       .col-sm-2  
-        input#recovery.form-control(type='text', placeholder='mm:ss', name='recovery')
+        input#recovery(list='recoveryChoices', placeholder='mm:ss' name='recovery')
+        datalist#recoveryChoices
+          option(value='08:00')
+          option(value='07:00')
+          option(value='06:00')
+          option(value='05:00')          
+          option(value='04:00')          
+          option(value='03:00')          
+          option(value='02:00')              
+
     button.btn.btn-primary(type='submit') Calculate
 
     p

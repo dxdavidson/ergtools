@@ -22,7 +22,7 @@ exports.stagger_create_post = [
 
     (req, res, next) => {
         console.debug("Values from form: req.body.numRowers=" + req.body.numRowers + " req.body.numErgos="+req.body.numErgos +" req.body.wktInterval="+req.body.wktInterval+" req.body.recovery="+req.body.recovery);
-        console.debug("numRowers2="+req.body.numRowers2);
+        console.debug("interval="+req.body.interval);
         retval = StaggerUtils.calcRestStagger(req.body.numRowers, req.body.numErgos, req.body.wktInterval, req.body.recovery);
         console.debug("retval.programmedRest" + retval.programmedRest);
         console.debug("retval.stagger" + retval.stagger);
