@@ -1,3 +1,7 @@
+To run 
+
+    node ./bin/www
+    
 To run in development
 
     SET DEBUG=ergtools:* & npm run devstart
